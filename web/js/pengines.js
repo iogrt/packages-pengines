@@ -736,10 +736,11 @@ Pengine.destroy_all = function(async) {
   }
 };
 
-if (typeof window === 'undefined') {
+// Treat as nodejs even when in window. Used with obsidian.
+//if (typeof window === 'undefined') {
   // Node.js
   module.exports = Pengine;
   var najax = require('najax');
   Pengine.network = najax;
   Pengine.network.ajax = najax;
-}
+//}
